@@ -19,8 +19,8 @@
 		DF7A936D150F59C2009F890D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7A936C150F59C2009F890D /* SenTestingKit.framework */; };
 		DF7A936E150F59C2009F890D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7A934B150F59C2009F890D /* UIKit.framework */; };
 		DF7A936F150F59C2009F890D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF7A934D150F59C2009F890D /* Foundation.framework */; };
-		DF7A9377150F59C2009F890D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF7A9375150F59C2009F890D /* InfoPlist.strings */; };
-		DF7A937A150F59C2009F890D /* LibSyncTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A9379150F59C2009F890D /* LibSyncTestTests.m */; };
+		DF7A9385150F5CF3009F890D /* LibSync.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A9384150F5CF3009F890D /* LibSync.m */; };
+		DF7A938F150F64DC009F890D /* LibSyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7A938E150F64DC009F890D /* LibSyncOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +38,22 @@
 		DF7A934B150F59C2009F890D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DF7A934D150F59C2009F890D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF7A934F150F59C2009F890D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DF7A9353150F59C2009F890D /* LibSyncTest-Info.plist */ = {isa = PBXFileReference; path = "LibSyncTest-Info.plist"; sourceTree = "<group>"; };
+		DF7A9353150F59C2009F890D /* LibSyncTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LibSyncTest-Info.plist"; sourceTree = "<group>"; };
 		DF7A9355150F59C2009F890D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DF7A9357150F59C2009F890D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DF7A9359150F59C2009F890D /* LibSyncTest-Prefix.pch */ = {isa = PBXFileReference; path = "LibSyncTest-Prefix.pch"; sourceTree = "<group>"; };
-		DF7A935A150F59C2009F890D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DF7A9359150F59C2009F890D /* LibSyncTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LibSyncTest-Prefix.pch"; sourceTree = "<group>"; };
+		DF7A935A150F59C2009F890D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DF7A935B150F59C2009F890D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DF7A935D150F59C2009F890D /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		DF7A935D150F59C2009F890D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DF7A935E150F59C2009F890D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DF7A9361150F59C2009F890D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		DF7A9364150F59C2009F890D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		DF7A936B150F59C2009F890D /* LibSyncTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibSyncTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF7A936C150F59C2009F890D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		DF7A9374150F59C2009F890D /* LibSyncTestTests-Info.plist */ = {isa = PBXFileReference; path = "LibSyncTestTests-Info.plist"; sourceTree = "<group>"; };
-		DF7A9376150F59C2009F890D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DF7A9378150F59C2009F890D /* LibSyncTestTests.h */ = {isa = PBXFileReference; path = LibSyncTestTests.h; sourceTree = "<group>"; };
-		DF7A9379150F59C2009F890D /* LibSyncTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibSyncTestTests.m; sourceTree = "<group>"; };
+		DF7A9383150F5CF3009F890D /* LibSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibSync.h; sourceTree = "<group>"; };
+		DF7A9384150F5CF3009F890D /* LibSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibSync.m; sourceTree = "<group>"; };
+		DF7A938D150F64DC009F890D /* LibSyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LibSyncOperation.h; sourceTree = "<group>"; };
+		DF7A938E150F64DC009F890D /* LibSyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LibSyncOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				DF7A9351150F59C2009F890D /* LibSyncTest */,
-				DF7A9372150F59C2009F890D /* LibSyncTestTests */,
 				DF7A934A150F59C2009F890D /* Frameworks */,
 				DF7A9348150F59C2009F890D /* Products */,
 			);
@@ -117,6 +116,10 @@
 				DF7A935B150F59C2009F890D /* AppDelegate.m */,
 				DF7A935D150F59C2009F890D /* ViewController.h */,
 				DF7A935E150F59C2009F890D /* ViewController.m */,
+				DF7A9383150F5CF3009F890D /* LibSync.h */,
+				DF7A9384150F5CF3009F890D /* LibSync.m */,
+				DF7A938D150F64DC009F890D /* LibSyncOperation.h */,
+				DF7A938E150F64DC009F890D /* LibSyncOperation.m */,
 				DF7A9360150F59C2009F890D /* ViewController_iPhone.xib */,
 				DF7A9363150F59C2009F890D /* ViewController_iPad.xib */,
 				DF7A9352150F59C2009F890D /* Supporting Files */,
@@ -131,25 +134,6 @@
 				DF7A9354150F59C2009F890D /* InfoPlist.strings */,
 				DF7A9357150F59C2009F890D /* main.m */,
 				DF7A9359150F59C2009F890D /* LibSyncTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DF7A9372150F59C2009F890D /* LibSyncTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				DF7A9378150F59C2009F890D /* LibSyncTestTests.h */,
-				DF7A9379150F59C2009F890D /* LibSyncTestTests.m */,
-				DF7A9373150F59C2009F890D /* Supporting Files */,
-			);
-			path = LibSyncTestTests;
-			sourceTree = "<group>";
-		};
-		DF7A9373150F59C2009F890D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				DF7A9374150F59C2009F890D /* LibSyncTestTests-Info.plist */,
-				DF7A9375150F59C2009F890D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,7 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF7A9377150F59C2009F890D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +247,8 @@
 				DF7A9358150F59C2009F890D /* main.m in Sources */,
 				DF7A935C150F59C2009F890D /* AppDelegate.m in Sources */,
 				DF7A935F150F59C2009F890D /* ViewController.m in Sources */,
+				DF7A9385150F5CF3009F890D /* LibSync.m in Sources */,
+				DF7A938F150F64DC009F890D /* LibSyncOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +256,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF7A937A150F59C2009F890D /* LibSyncTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +294,6 @@
 			name = ViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
-		DF7A9375150F59C2009F890D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF7A9376150F59C2009F890D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -340,7 +316,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -358,7 +334,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -372,6 +348,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LibSyncTest/LibSyncTest-Prefix.pch";
 				INFOPLIST_FILE = "LibSyncTest/LibSyncTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -383,6 +360,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LibSyncTest/LibSyncTest-Prefix.pch";
 				INFOPLIST_FILE = "LibSyncTest/LibSyncTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

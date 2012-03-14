@@ -7,12 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "LibSync.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+@synthesize runButton;
+@synthesize iPadRunButton;
 
 - (void)viewDidLoad
 {
@@ -20,8 +23,27 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+
+/* ATTACH FUNCTION TO RUN BUTTONS TO LAUNCH LIBRARY SYNC */
+- (IBAction)runLibSync:(id)sender {
+    
+    NSLog(@"BUTTON PUSHED");
+    LibSync *libClass = [[[LibSync alloc]init]autorelease];
+    [libClass LibSyncOperation];    
+}
+
+- (IBAction)runLibSynciPhone:(id)sender {
+
+    NSLog(@"BUTTON PUSHED");
+    LibSync *libClass = [[[LibSync alloc]init]autorelease];
+    [libClass LibSyncOperation];
+}
+
+
 - (void)viewDidUnload
 {
+    [self setRunButton:nil];
+    [self setIPadRunButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -35,4 +57,9 @@
     }
 }
 
+- (void)dealloc {
+    [runButton release];
+    [iPadRunButton release];
+    [super dealloc];
+}
 @end

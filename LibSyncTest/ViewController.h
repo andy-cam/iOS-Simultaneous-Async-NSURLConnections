@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (retain, nonatomic) IBOutlet UIButton *runButton;
+@property (retain, nonatomic) IBOutlet UIButton *iPadRunButton;
+
 @end
