@@ -19,43 +19,50 @@
 	if (![super init]) return nil;
     
     // Construct the URL to be downloaded
-	downloadURL = [[[NSURL alloc]initWithString:downloadString]autorelease];
-	downloadData = [[[NSMutableData alloc] init] autorelease];
-    
+	downloadURL = [[NSURL alloc]initWithString:downloadString];
+	downloadData = [[NSMutableData alloc] init];
     
     NSLog(@"downloadURL: %@",[downloadURL path]);
     
     // Create the download path
-    downloadPath = [NSString stringWithFormat:@"%@.txt",downloadString];
+    downloadPath = [[[NSString alloc]initWithFormat:@"%@.txt",downloadString]stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	
+	NSLog(@"downloadPath: %@",downloadPath);
 	
 	return self;
 }
 
 -(void)dealloc {
+	
+	[downloadData release];
+	[downloadPath release];
+	[downloadURL release];
 	[super dealloc];
 }
 
 -(void)main {
-    
-	// Create ARC pool instance for this thread.   
-	// NSAutoreleasePool *pool = [[NSAutoreleasePool alloc]init]; //--> COMMENTED OUT, MAY BE PART OF ISSUE
 	
 	if (![self isCancelled]) {
 		
 		[self willChangeValueForKey:@"isExecuting"];
 		executing = YES;
 			
+		// Create the download connection
         NSURLRequest *downloadRequest = [NSURLRequest requestWithURL:downloadURL];
         NSLog(@"%s: downloadRequest: %@",__FUNCTION__,downloadURL);
-        NSURLConnection *downloadConnection = [[NSURLConnection alloc] initWithRequest:downloadRequest delegate:self startImmediately:NO];
+        NSURLConnection *downloadConnection = [[NSURLConnection alloc] initWithRequest:downloadRequest delegate:self];
+		
+		// IMPORTANT! The next line is what keeps the NSOperation alive for the during of the NSURLConnection!
+		[downloadConnection scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+		[downloadConnection start]; 
         
-        // This block SHOULD keep the NSOperation from releasing before the download has been finished
+        // Continue the download until operation is cancelled, finished or errors out
         if (downloadConnection) {
             NSLog(@"connection established!");
             do {
                 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
             } while (!downloadDone);
-            
+            [self terminateOperation];
         } else {
             NSLog(@"couldn't establish connection for: %@", downloadURL);
             
@@ -66,9 +73,6 @@
 	else { // Operation has been cancelled, clean up
 		[self terminateOperation];
 	}
-	
-	// Release the ARC pool to clean out this thread 
-	//[pool release];	//--> COMMENTED OUT, MAY BE PART OF ISSUE
 }
 
 
@@ -91,7 +95,9 @@
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *docDir = [paths objectAtIndex:0];
-	NSString *targetPath = [docDir stringByAppendingPathComponent:downloadPath];
+	NSString *filePath = [downloadPath stringByReplacingOccurrencesOfString:@"http://" withString:@""];
+	
+	NSString *targetPath = [docDir stringByAppendingPathComponent:filePath];
 	BOOL isDir; 
 	
 	// If target folder path doesn't exist, create it 
@@ -105,7 +111,7 @@
 	}
 	
 	NSError *saveError = nil;
-	//NSLog(@"downloadData: %@",downloadData);
+	// Write the downloaded website homepage to the root Documents folder of the app
 	[downloadData writeToFile:targetPath options:NSDataWritingAtomic error:&saveError];
 	if (saveError != nil) {
 		NSLog(@"Download save failed! Error: %@", [saveError description]);
@@ -114,7 +120,6 @@
 	else {
 		NSLog(@"file has been saved!: %@", targetPath);
 	}
-	
 	downloadDone = true;
 }
 

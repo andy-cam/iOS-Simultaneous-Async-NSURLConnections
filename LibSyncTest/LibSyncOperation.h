@@ -8,14 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LibSyncOperation : NSOperation <NSURLConnectionDelegate> {
-    NSString *downloadPath;
-	NSURL *downloadURL;
-    NSMutableData *downloadData;
-	BOOL executing;  
-	BOOL finished;
-	BOOL downloadDone;
-}
+@interface LibSyncOperation : NSOperation <NSURLConnectionDelegate>
 
 // Object properties
 @property (nonatomic, retain) NSString *downloadPath;
