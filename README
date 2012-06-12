@@ -2,7 +2,7 @@ This small example project demonstrates how to subclass, instantiate and run
 multiple instances of an NSOperation that is an NSURLConnection delegate. 
 
 I initially created it to assist on a StackOverflow question I asked
-(http://stackoverflow.com/questions/9684770/create-run-multiple-instances-of-nsoperation-subclass) 
+(http://stackoverflow.com/questions/9684770/run-multiple-instances-of-nsoperation-with-nsurlconnection) 
 because it wasn't running the NSURLConnections correctly, but having since gotten it
 working I decided to leave this here as a helpful code snippet to anyone else who 
 might have arrived here with the same issue!
