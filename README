@@ -1,8 +1,16 @@
-This example project is a much smaller version of the one I'm trying to implement in our
-main project, but with the same implementation and same issues.
+This small example project demonstrates how to subclass, instantiate and run
+multiple instances of an NSOperation that is an NSURLConnection delegate. 
 
-I'll assume you came here from my StackOverflow post so I won't re-explain everything,
-but if you found all the code on the SO post too un-followable you can grab the project
-and see what it does (and hopefully point out what silly mistake I've made)!
+I initially created it to assist on a StackOverflow question I asked
+(http://stackoverflow.com/questions/9684770/create-run-multiple-instances-of-nsoperation-subclass) 
+because it wasn't running the NSURLConnections correctly, but having since gotten it
+working I decided to leave this here as a helpful code snippet to anyone else who 
+might have arrived here with the same issue!
 
-Thanks :)
+The class initially was intended to run only 1 NSOperation at a time as part of a much larger
+project due to the memory constraints of current/previous-gen iDevices, but for smaller 
+downloads you can easily bump up that limit, just change the line in LibSync.m:
+ 
+    [operationQueue setMaxConcurrentOperationCount:1]; // Can set this as needed
+    
+Hope this helps someone! Happy coding
